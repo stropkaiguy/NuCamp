@@ -9,13 +9,21 @@ import Footer from './components/Footer';
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
 import AboutPage from './pages/AboutPage';
 import { fetchCampsites } from './features/campsites/campsitesSlice';
+import { fetchPartners } from './features/partners/partnersSlice';
 import './App.css';
+import { fetchPromotions } from './features/promotions/promotionsSlice';
+import {fetchComments} from './features/comments/commentSlice';
+
+
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCampsites());
+    dispatch(fetchPartners());
+    dispatch(fetchPromotions());
+    dispatch(fetchComments());
 }, [dispatch]);
 
   return (
